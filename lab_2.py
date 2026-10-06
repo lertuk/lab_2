@@ -6,8 +6,6 @@ def scrape_laptops_edge():
     output_file = "laptops_data.csv"
     
     with sync_playwright() as p:
-        # ГОЛОВНА ЗМІНА: Використовуємо вже встановлений у Windows Microsoft Edge
-        # Це позбавляє необхідності робити playwright install
         browser = p.chromium.launch(channel="msedge", headless=True)
         page = browser.new_page()
         
